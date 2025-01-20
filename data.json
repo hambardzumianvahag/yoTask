@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Set up project environment",
+    "description": "Initialize the project repository and configure dependencies.",
+    "status": "to do"
+  },
+  {
+    "id": 2,
+    "title": "Create main layout",
+    "description": "Design the primary layout structure for the application.",
+    "status": "in progress"
+  },
+  {
+    "id": 3,
+    "title": "Develop authentication module",
+    "description": "Implement login, registration, and password recovery features.",
+    "status": "to do"
+  },
+  {
+    "id": 4,
+    "title": "Test API endpoints",
+    "description": "Ensure all API endpoints respond correctly and handle edge cases.",
+    "status": "testing"
+  },
+  {
+    "id": 5,
+    "title": "Optimize app performance",
+    "description": "Analyze and improve the app's speed and resource usage.",
+    "status": "done"
+  },
+  {
+    "id": 6,
+    "title": "Write unit tests",
+    "description": "Create unit tests for key components and features.",
+    "status": "in progress"
+  },
+  {
+    "id": 7,
+    "title": "Set up CI/CD pipeline",
+    "description": "Configure continuous integration and deployment for the project.",
+    "status": "to do"
+  },
+  {
+    "id": 8,
+    "title": "Fix responsive design issues",
+    "description": "Resolve layout problems on smaller screens.",
+    "status": "in progress"
+  },
+  {
+    "id": 9,
+    "title": "Deploy application to staging",
+    "description": "Prepare and deploy the app to the staging environment for review.",
+    "status": "testing"
+  },
+  {
+    "id": 10,
+    "title": "Prepare user documentation",
+    "description": "Write clear and concise documentation for end-users.",
+    "status": "done"
+  }
+]

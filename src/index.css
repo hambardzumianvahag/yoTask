@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Abhaya Libre';
+    src: url('../public/fonts/AbhayaLibre-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../public/fonts/Inter-VariableFont_opsz,wght.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Almarai';
+    src: url('../public/fonts/Almarai-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
