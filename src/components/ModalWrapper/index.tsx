@@ -27,9 +27,10 @@ const style = {
 
 
 export default function ModalWrapper({ mode, open, onClose, onCreate, onUpdate, onDelete, selectedTodo }: ModalProps) {
-    const [title, setTitle] = useState(selectedTodo?.title || "");
-    const [description, setDescription] = useState(selectedTodo?.description || "");
+    const [title, setTitle] = useState<string>(selectedTodo?.title || "");
+    const [description, setDescription] = useState<string>(selectedTodo?.description || "");
     const [selectedStatus, setSelectedStatus] = useState<string | null>(null);
+    const [errorText, setErrorText] = useState<string>('');
 
     useEffect(() => {
         if (selectedTodo) {
@@ -40,12 +41,19 @@ export default function ModalWrapper({ mode, open, onClose, onCreate, onUpdate, 
     }, [selectedTodo]);
 
     const handleSave = () => {
+        if (!title || !description) {
+            setErrorText("All fields are required!");
+            return;
+        }
+        setErrorText("");
         if (mode === "edit" && selectedTodo) {
-            onUpdate(selectedTodo.id, title, description, selectedStatus || selectedTodo.status);
+            const updatedStatus = selectedStatus || selectedTodo.status;
+            onUpdate(selectedTodo.id, title, description, updatedStatus);
         } else if (mode === "create") {
             onCreate(title, description);
         }
     };
+
 
     return (
         <Modal
@@ -65,7 +73,8 @@ export default function ModalWrapper({ mode, open, onClose, onCreate, onUpdate, 
                     </span>
                 </div>
                 <Box sx={{ mt: 2 }}>
-                    <form>
+                    {errorText && <h2 className="text-[#CF0707] font-semibold">{errorText}</h2>}
+                    <form onSubmit={(e) => e.preventDefault()}>
                         <input
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
@@ -87,9 +96,9 @@ export default function ModalWrapper({ mode, open, onClose, onCreate, onUpdate, 
                                         onClick={(e) => {
                                             e.preventDefault();
                                             setSelectedStatus(status);
-                                        }}                                        className={`py-2 px-4 rounded-lg text-sm md:text-base text-white ${
-                                        selectedStatus?.toUpperCase() === status ? "bg-[#A201DC]" : "bg-[#D45FFF]"
-                                        }`}
+                                        }}
+                                        className={`py-2 px-4 rounded-lg text-sm md:text-base text-white 
+                                        ${selectedStatus?.toUpperCase() === status ? "bg-[#A201DC]" : "bg-[#D45FFF]"}`}
                                     >
                                         {status}
                                     </button>

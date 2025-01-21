@@ -8,7 +8,7 @@ import { TodoType } from "../../types";
 
 export default function Layout() {
     const [todos, setTodos] = useState<TodoType[]>(todoData as TodoType[]);
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState<boolean>(false);
     const [mode, setMode] = useState<"create" | "edit" | null>(null);
     const [selectedTodo, setSelectedTodo] = useState<TodoType | null>(null);
 
